@@ -34,7 +34,9 @@ input,
 button {
   appearance: none;
   background: none;
-  border: none;
+  /* border: none; */
+  border: 1px solid #747171;
+  box-shadow: #21222d;
   outline: none;
   font-size: inherit;
   font-family: "Jost", sans-serif;

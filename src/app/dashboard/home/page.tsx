@@ -1,17 +1,17 @@
 import React, { Fragment } from "react";
 import { Metadata } from "next";
-import LoginIndex from "./index";
+import HomeIndex from "./index";
 
 export const metadata: Metadata = {
-  title: "Login | Carent-Admin",
+  title: "Dashboard | Carent-Admin",
 };
 
-const Login = () => {
+const Home = () => {
   return (
     <Fragment>
-      <LoginIndex />
+      <HomeIndex />
     </Fragment>
   );
 };
 
-export default Login;
+export default Home;
