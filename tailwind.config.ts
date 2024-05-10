@@ -12,6 +12,8 @@ const config: Config = {
         "app-green": "#1ED760",
         "app-dark": "#222222",
         "app-white": "#FFFFFF",
+        "app-darkGray": "#33343E",
+        "app-textGray": "#CBC7C7",
         "off-green": "#92C2A3",
         "app-grey": "#7A7983",
         "dark-grey": "#1D3124",
