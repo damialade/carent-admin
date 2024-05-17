@@ -1,6 +1,6 @@
 import React, { Fragment } from "react";
 import { Metadata } from "next";
-import HomeIndex from "./index";
+import DBHome from "./index";
 
 export const metadata: Metadata = {
   title: "Dashboard | Carent-Admin",
@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 const Home = () => {
   return (
     <Fragment>
-      <HomeIndex />
+      <DBHome />
     </Fragment>
   );
 };

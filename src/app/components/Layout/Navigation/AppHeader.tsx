@@ -14,13 +14,13 @@ const AppHeader = ({
   return (
     <header className="flex w-screen min-h-[90px]">
       <div
-        className={`flex fixed top-0 left-0 bg-app-dark w-full border-b-[1px] z-[500] ${
-          navOpen ? "translate-x-[300px]" : "translate-x-[80px]"
+        className={`flex fixed top-0 left-0 bg-dark-grey w-full border-b-[1px] z-[500] ${
+          navOpen ? "translate-x-[250px]" : "translate-x-[75px]"
         } `}
       >
         <div
           className={`relative flex justify-between items-start w-full p-4 ${
-            navOpen ? "mr-[342px]" : "mr-[80px]"
+            navOpen ? "mr-[250px]" : "mr-[80px]"
           }`}
         >
           <div className="flex items-center justify-between ">
@@ -37,21 +37,21 @@ const AppHeader = ({
               >
                 <path
                   d="M5 15L17.5 15"
-                  stroke="#00C170"
+                  stroke="#1BB652"
                   strokeWidth="3"
                   strokeLinecap="round"
                   strokeLinejoin="round"
                 />
                 <path
                   d="M5 7.5L25 7.5"
-                  stroke="#00C170"
+                  stroke="#1BB652"
                   strokeWidth="3"
                   strokeLinecap="round"
                   strokeLinejoin="round"
                 />
                 <path
                   d="M5 22.5L10 22.5"
-                  stroke="#00C170"
+                  stroke="#1BB652"
                   strokeWidth="3"
                   strokeLinecap="round"
                   strokeLinejoin="round"
@@ -69,7 +69,7 @@ const AppHeader = ({
                       <p className="text-base">Gbolaga Tula</p>
                       <p className="capitalize text-sm">Admin</p>
                     </div>
-                    <div className="rounded-full border bg-app-green w-12 h-12 text-center py-2 text-xl font-semibold ">
+                    <div className="rounded-full border bg-btn-green w-12 h-12 text-center py-2 text-xl font-semibold ">
                       GT
                     </div>
                   </div>
@@ -95,7 +95,10 @@ const AppHeader = ({
                     Email: gbollytula@gmail.com
                   </i>
                   <div className="px-1 py-2 ">
-                    <button className="bg-app-green w-full flex items-center justify-center p-2 rounded-2xl text-lg font-bold">
+                    <button
+                      onClick={() => setShowModal(true)}
+                      className="bg-btn-green w-full flex items-center justify-center p-2 rounded-2xl text-lg font-bold"
+                    >
                       Update Password
                     </button>
                   </div>

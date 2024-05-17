@@ -20,6 +20,8 @@
     "paths": {
       "@/styles/*": ["./src/app/styles/*"],
       "@/components/*": ["./src/app/components/*"],
+      "@/dashboard/*": ["./src/app/dashboard/*"],
+      "@/hooks/*": ["./src/app/hooks/*"],
       "@/utils/*": ["./src/app/utils/*"],
       "@/modules/*": ["./src/app/modules/*"],
       "@/*": ["./*"]
