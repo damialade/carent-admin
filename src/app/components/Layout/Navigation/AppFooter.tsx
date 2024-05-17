@@ -5,7 +5,7 @@ const currentYear = date.getFullYear();
 
 const AppFooter = () => {
   return (
-    <div className="w-screen bg-app-dark text-app-white text-center p-2 font-semibold">
+    <div className="w-screen bg-dark-grey text-app-white text-center p-2 font-semibold">
       <p>
         Built by{" "}
         <a

@@ -43,13 +43,13 @@ const UpdatePassword = ({ onClose = () => {}, show2, onClick }) => {
                   <div className="flex items-center justify-between">
                     <DialogTitle
                       as="h3"
-                      className="text-pure-white text-2xl font-extrabold"
+                      className="text-app-white text-2xl font-extrabold"
                     >
                       Update Password
                     </DialogTitle>
                     <button
                       type="button"
-                      className="text-gray-400  hover:bg-app-yellow hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-600 dark:hover:text-white"
+                      className="text-gray-400  hover:bg-btn-green hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-600 dark:hover:text-white"
                       onClick={onClick}
                     >
                       <Close />
@@ -77,7 +77,7 @@ const UpdatePassword = ({ onClose = () => {}, show2, onClick }) => {
                     <div className="flex justify-center my-5">
                       <Button
                         type="submit"
-                        className="text-app-black w-[50%] !p-2 flex items-center justify-center space-x-6 text-lg"
+                        className="text-app-white w-[50%] !p-2 flex items-center justify-center space-x-6 text-lg"
                       >
                         <span>Update</span>
                       </Button>

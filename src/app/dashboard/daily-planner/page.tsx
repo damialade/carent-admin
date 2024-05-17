@@ -1,15 +1,15 @@
 import React, { Fragment } from "react";
 import { Metadata } from "next";
-import HomeIndex from "./index";
+import Planner from "./index";
 
 export const metadata: Metadata = {
-  title: "Dashboard | Carent-Admin",
+  title: "Daily-Planner | Carent-Admin",
 };
 
 const Home = () => {
   return (
     <Fragment>
-      <HomeIndex />
+      <Planner />
     </Fragment>
   );
 };

@@ -6,3 +6,9 @@ export interface WithClassname
 export interface IconProps extends SVGAttributes<SVGElement> {
   color?: string;
 }
+
+export type Rate = {
+  vtype: string;
+  mileage: string;
+  rtype: string;
+};

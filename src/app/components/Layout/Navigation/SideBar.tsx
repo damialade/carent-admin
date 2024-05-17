@@ -31,7 +31,7 @@ const paths: {
 }[] = [
   {
     id: 1,
-    path: "/home",
+    path: "/",
     text: "Dashboard",
     icon: Home,
   },
@@ -42,31 +42,31 @@ const paths: {
     icon: Vehicle,
   },
   {
-    id: 2,
+    id: 3,
     path: "/daily-planner",
     text: "Daily Planner",
     icon: Planner,
   },
   {
-    id: 2,
+    id: 4,
     path: "/reservations",
     text: "Reservations",
     icon: Reservations,
   },
   {
-    id: 2,
+    id: 5,
     path: "/customers",
     text: "Customers",
     icon: Customers,
   },
   {
-    id: 2,
+    id: 6,
     path: "/agreements",
     text: "Agreements",
     icon: Agreements,
   },
   {
-    id: 2,
+    id: 7,
     path: "/reports",
     text: "Reports",
     icon: Reports,
@@ -82,258 +82,7 @@ const paths: {
   //       text: "Revenue Centre",
   //       icon: Dot,
   //     },
-  //     {
-  //       id: 4,
-  //       path: "tables/table",
-  //       text: "Tables",
-  //       icon: Dot,
-  //     },
-  //     {
-  //       id: 35,
-  //       path: "tables/charge-type",
-  //       text: "Charge Types",
-  //       icon: Dot,
-  //     },
-  //     {
-  //       id: 36,
-  //       path: "tables/sales-tax",
-  //       text: "Sales Tax",
-  //       icon: Dot,
-  //     },
   //   ],
-  // },
-
-  // {
-  //   id: 5,
-  //   path: "items",
-  //   text: "Items",
-  //   icon: Items,
-  //   subMenu: [
-  //     {
-  //       id: 6,
-  //       path: "items/preparation-area",
-  //       text: "Preparation Area",
-  //       icon: Dot,
-  //     },
-  //     {
-  //       id: 7,
-  //       path: "items/item-class",
-  //       text: "Item Class",
-  //       icon: Dot,
-  //     },
-  //     {
-  //       id: 8,
-  //       path: "items/items",
-  //       text: "Items",
-  //       icon: Dot,
-  //     },
-  //     {
-  //       id: 35,
-  //       path: "items/unitOfMeasurement",
-  //       text: "Unit Of Measurement",
-  //       icon: Dot,
-  //     },
-  //     {
-  //       id: 36,
-  //       path: "items/unitOfMeasurementRelationship",
-  //       text: "UoM Relationship",
-  //       icon: Dot,
-  //     },
-  //   ],
-  // },
-
-  // {
-  //   id: 9,
-  //   text: "Inventory",
-  //   icon: Stock,
-  //   subMenu: [
-  //     {
-  //       id: 10,
-  //       path: "stocks/overview",
-  //       text: "Overview",
-  //       icon: Dot,
-  //     },
-  //     {
-  //       id: 11,
-  //       path: "stocks/stock-request",
-  //       text: "Stock Request",
-  //       icon: Dot,
-  //     },
-  //     {
-  //       id: 12,
-  //       path: "stocks/purchase-order",
-  //       text: "Purchase Order",
-  //       icon: Dot,
-  //     },
-  //     {
-  //       id: 13,
-  //       path: "stocks/stock-receipt",
-  //       text: "Stock Receipt",
-  //       icon: Dot,
-  //     },
-  //     {
-  //       id: 14,
-  //       path: "stocks/stock-transfer-request",
-  //       text: "Stock Transfer Request",
-  //       icon: Dot,
-  //     },
-  //     {
-  //       id: 15,
-  //       path: "stocks/stock-transfer-receipt",
-  //       text: "Stock Transfer Receipt",
-  //       icon: Dot,
-  //     },
-  //     {
-  //       id: 37,
-  //       path: "stocks/stock-take",
-  //       text: "Stock Take",
-  //       icon: Dot,
-  //     },
-  //     {
-  //       id: 38,
-  //       path: "stocks/stock-adjustment",
-  //       text: "Stock Adjustment",
-  //       icon: Dot,
-  //     },
-  //     {
-  //       id: 16,
-  //       path: "stocks/vendors",
-  //       text: "Vendors",
-  //       icon: Dot,
-  //     },
-  //     {
-  //       id: 17,
-  //       path: "stocks/locations",
-  //       text: "Locations",
-  //       icon: Dot,
-  //     },
-  //   ],
-  // },
-  // {
-  //   id: 18,
-  //   path: "staff",
-  //   text: "Staff",
-  //   icon: Staff,
-  // },
-  // {
-  //   id: 19,
-  //   path: "sessions",
-  //   text: "Sessions",
-  //   icon: Session,
-  // },
-  // {
-  //   id: 39,
-  //   path: "discount",
-  //   text: "Discount & Promo ",
-  //   icon: Stock,
-  //   subMenu: [
-  //     {
-  //       id: 21,
-  //       path: "discount/discount-code",
-  //       text: "Discount Codes",
-  //       icon: Dot,
-  //     },
-  //   ],
-  // },
-  // {
-  //   id: 20,
-  //   path: "reports",
-  //   text: "Reports",
-  //   icon: Reports,
-  //   subMenu: [
-  //     {
-  //       id: 21,
-  //       path: "reports/voided-report",
-  //       text: "Voided Report",
-  //       icon: Dot,
-  //     },
-  //     {
-  //       id: 22,
-  //       path: "reports/staff-complementary-report",
-  //       text: "Staff Complementary Report",
-  //       icon: Dot,
-  //     },
-  //     {
-  //       id: 23,
-  //       path: "reports/customer-complementary-report",
-  //       text: "Customer Complementary Report",
-  //       icon: Dot,
-  //     },
-  //     {
-  //       id: 24,
-  //       path: "reports/sales-by-individuals",
-  //       text: "Sales By Individuals",
-  //       icon: Dot,
-  //     },
-  //     {
-  //       id: 25,
-  //       path: "reports/sales-by-items",
-  //       text: "Sales By Items",
-  //       icon: Dot,
-  //     },
-  //     {
-  //       id: 26,
-  //       path: "reports/discount-daily",
-  //       text: "Discount Daily",
-  //       icon: Dot,
-  //     },
-  //     {
-  //       id: 27,
-  //       path: "reports/operations",
-  //       text: "Operations",
-  //       icon: Dot,
-  //     },
-  //     {
-  //       id: 28,
-  //       path: "reports/all-checks",
-  //       text: "All Checks",
-  //       icon: Dot,
-  //     },
-  //     // {
-  //     //   id: 29,
-  //     //   path: "reports/check-details",
-  //     //   text: "Check Details",
-  //     //   icon: Dot,
-  //     // },
-  //     {
-  //       id: 30,
-  //       path: "reports/sales-mix-summary",
-  //       text: "Sales Mix Summary",
-  //       icon: Dot,
-  //     },
-  //   ],
-  // },
-  // // {
-  // //   id: 31,
-  // //   path: "menu",
-  // //   text: "Menu",
-  // //   icon: Items,
-  // // },
-  // {
-  //   id: 31,
-  //   path: "channels",
-  //   text: "Channels",
-  //   icon: Channels,
-  //   subMenu: [
-  //     {
-  //       id: 32,
-  //       path: "",
-  //       text: "Orders",
-  //       icon: Dot,
-  //     },
-  //     {
-  //       id: 33,
-  //       path: "channels/channel-manager",
-  //       text: "Channel Manager",
-  //       icon: Dot,
-  //     },
-  //   ],
-  // },
-  // {
-  //   id: 34,
-  //   path: "issues",
-  //   text: "Issues",
-  //   icon: Issues,
   // },
 ];
 
@@ -447,7 +196,7 @@ const NavItem = ({
         {path?.icon ? <Icon {...fillProps} /> : null}
       </span>
       <span
-        className={`${textClass}  group-hover:text-btn-green text-app-textGray min-w-72
+        className={`${textClass} cursor-pointer group-hover:text-btn-green text-app-textGray min-w-72
           `}
       >
         {path.text}
@@ -469,12 +218,12 @@ const SideBar = ({
       onMouseLeave={() => setNavOpen(false)}
       onMouseEnter={() => setNavOpen(true)}
       className={`list-none fixed py-4 top-0 left-0 h-screen overflow-x-hidden overflow-y-auto bg-app-dark border-r-[1px] z-[1000] transition-width ${
-        navOpen ? "w-[300px]" : "w-[80px]"
+        navOpen ? "w-[250px]" : "w-[75px]"
       }`}
     >
       <NavLink
         to="/"
-        className={`flex justify-center px-7 font-sans min-w-[140px] transition-transform origin-top-left  text-transparent bg-clip-text  font-semibold mb-3 ${
+        className={`flex justify-center px-7 font-sans min-w-[135px] transition-transform origin-top-left  text-transparent bg-clip-text  font-semibold mb-3 ${
           navOpen
             ? "translate-x-0 scale-100 "
             : "-translate-x-[8px] scale-[0.6]"
@@ -525,11 +274,15 @@ const SideBar = ({
           );
         })}
       </div>
-      <button className="flex px-4 space-x-6 ml-[0.5rem] border-0">
-        <span className="object-contain text-center  min-h-20 ">
+      <button className="flex px-2 space-x-6 ml-[0.5rem] border-0">
+        <span className="object-contain text-center  min-h-20 scale-75 ">
           <Logout className="w-[16px] h-[16px]" />
         </span>
-        <span className={`mt-1 text-app-textGray font-medium`}>SignOut</span>
+        <span
+          className={`mt-1.5 text-app-textGray font-medium hover:text-btn-green`}
+        >
+          SignOut
+        </span>
       </button>
     </li>
   );

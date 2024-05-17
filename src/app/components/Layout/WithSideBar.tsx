@@ -13,7 +13,7 @@ const WithSideBar = ({ children }: { children: React.ReactNode }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="w-full  min-h-screen grid grid-cols-[80px_262px_minmax(0,1fr)] overflow-x-hidden overflow-y-auto">
+    <div className="w-full bg-app-dark  min-h-screen grid grid-cols-[80px_262px_minmax(0,1fr)] overflow-x-hidden overflow-y-auto">
       <aside className={`min-h-screen`}></aside>
 
       <div
@@ -27,14 +27,14 @@ const WithSideBar = ({ children }: { children: React.ReactNode }) => {
         <AppHeader navOpen={isOpen} setNavOpen={setIsOpen} />
         <div
           className={`${className} pt-4  w-full min-h-screen ${
-            isOpen ? "translate-x-0" : "-translate-x-[262px]"
+            isOpen ? "-translate-x-24" : "-translate-x-[262px]"
           }
           `}
         >
           <Children>{children}</Children>
         </div>
         <div
-          className={`${isOpen ? "-translate-x-20" : "-translate-x-[262px]"}`}
+          className={`${isOpen ? "-translate-x-28" : "-translate-x-[272px]"}`}
         >
           <AppFooter />
         </div>

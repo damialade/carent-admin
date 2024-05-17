@@ -41,13 +41,13 @@ button {
   font-size: inherit;
   font-family: "Jost", sans-serif;
 }
-select {
+/* select {
   background: none;
   border: none;
   outline: none;
   font-size: inherit;
   font-family: "Jost", sans-serif;
-}
+} */
 
 textarea {
   font-family: "Jost", sans-serif;
@@ -63,4 +63,15 @@ input[type="checkbox"] {
   appearance: auto;
   width: 2em;
   opacity: 1;
+}
+
+.map {
+  height: 50vh;
+  width: 40vw;
+}
+
+.map-container {
+  height: 100%;
+  width: 75%;
+  margin-left: 10px;
 }
