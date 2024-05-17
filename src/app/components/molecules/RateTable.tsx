@@ -70,7 +70,7 @@ const RateTable = () => {
         styles.table
       )}
     >
-      <thead className="text-lg border-y-[1px] capitalize">
+      <thead className="text-lg border-y-[1px] text-[#78828f] capitalize bg-[#e8f8ee]">
         {table.getHeaderGroups().map((headerGroup) => (
           <tr key={headerGroup.id}>
             {headerGroup.headers.map((header) => (

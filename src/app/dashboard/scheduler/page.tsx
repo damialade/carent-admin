@@ -1,17 +1,17 @@
 import React, { Fragment } from "react";
 import { Metadata } from "next";
-import Planner from "./index";
+import Scheduler from "./index";
 
 export const metadata: Metadata = {
-  title: "Daily-Planner | Carent-Admin",
+  title: "Scheduler | Carent-Admin",
 };
 
-const Home = () => {
+const SchedulerHome = () => {
   return (
     <Fragment>
-      <Planner />
+      <Scheduler />
     </Fragment>
   );
 };
 
-export default Home;
+export default SchedulerHome;

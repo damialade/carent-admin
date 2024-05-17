@@ -43,8 +43,8 @@ const paths: {
   },
   {
     id: 3,
-    path: "/daily-planner",
-    text: "Daily Planner",
+    path: "/scheduler",
+    text: "Scheduler",
     icon: Planner,
   },
   {

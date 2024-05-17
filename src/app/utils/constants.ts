@@ -1,3 +1,8 @@
 const ICON_SIZE = "w-6 h-6";
 const MIN_SCREEN = 768;
-export { MIN_SCREEN, ICON_SIZE };
+const PAGINATION = {
+  PAGE_SIZE: 20,
+  SIBLING_COUNT: 2,
+};
+
+export { PAGINATION, MIN_SCREEN, ICON_SIZE };

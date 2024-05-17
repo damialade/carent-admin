@@ -20,7 +20,7 @@ const Zoom = ({ onChange }: any) => {
           value="month"
           onChange={handleChange}
           checked={level === "month"}
-        />{" "}
+        />
         Month
       </label>
       <label>
@@ -30,7 +30,7 @@ const Zoom = ({ onChange }: any) => {
           value="week"
           onChange={handleChange}
           checked={level === "week"}
-        />{" "}
+        />
         Week
       </label>
     </span>

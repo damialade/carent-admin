@@ -12,3 +12,24 @@ export type Rate = {
   mileage: string;
   rtype: string;
 };
+
+export interface Pills {
+  noOfPages: any;
+  currentPage: any;
+  onPageChange?: any;
+  previousPage: any;
+  nextPage: any;
+  goToPage: any;
+  isManual?: any;
+}
+export type Vehicle = {
+  id: number;
+  license_no: string;
+  color: string;
+  make: string;
+  model: string;
+  status: string;
+  vehicle_type: string;
+  vin: string;
+  fuel_type: string;
+};

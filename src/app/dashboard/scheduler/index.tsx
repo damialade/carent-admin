@@ -5,7 +5,7 @@ import { DayPilot, DayPilotScheduler } from "daypilot-pro-react";
 import WithSideBar from "@/components/Layout/WithSideBar";
 import Zoom from "./zoom";
 
-const Planner = () => {
+const Scheduler = () => {
   const [config, setConfig] = useState({
     startDate: "2024-05-01",
     days: 31,
@@ -63,25 +63,25 @@ const Planner = () => {
       args.data.fontColor = "white";
 
       args.data.areas = [];
-      if (args.data.locked) {
-        args.data.areas.push({
-          right: 4,
-          top: 8,
-          height: 18,
-          width: 18,
-          symbol: "icons/daypilot.svg#padlock",
-          fontColor: "white",
-        });
-      } else if (args.data.plus) {
-        args.data.areas.push({
-          right: 4,
-          top: 8,
-          height: 18,
-          width: 18,
-          symbol: "icons/daypilot.svg#plus-4",
-          fontColor: "white",
-        });
-      }
+      // if (args.data.locked) {
+      //   args.data.areas.push({
+      //     right: 4,
+      //     top: 8,
+      //     height: 18,
+      //     width: 18,
+      //     //   symbol: "icons/daypilot.svg#padlock",
+      //     fontColor: "white",
+      //   });
+      // } else if (args.data.plus) {
+      //   args.data.areas.push({
+      //     right: 4,
+      //     top: 8,
+      //     height: 18,
+      //     width: 18,
+      //     //   symbol: "icons/daypilot.svg#plus-4",
+      //     fontColor: "white",
+      //   });
+      // }
     },
   });
 
@@ -293,29 +293,29 @@ const Planner = () => {
     <Fragment>
       <WithSideBar>
         <div className="px-3">
-          <p className="text-app-white text-3xl font-extrabold">
-            Daily Planner
-          </p>
+          <p className="text-app-white text-3xl font-extrabold">Scheduler</p>
         </div>
-        <div className="toolbar p-2 ">
-          <Zoom onChange={(args) => zoomChange(args)} />
+        <div className="max-w-[98%] mx-auto my-6">
+          <div className="toolbar py-2 ">
+            <Zoom onChange={(args) => zoomChange(args)} />
 
-          <span className="toolbar-item font-medium text-md text-btn-green">
-            <label>
-              <input
-                type="checkbox"
-                className="accent-btn-green"
-                checked={config.cellWidthSpec === "Auto"}
-                onChange={(ev) => cellWidthChange(ev)}
-              />{" "}
-              Adjust width
-            </label>
-          </span>
+            <span className="toolbar-item font-medium text-md text-btn-green">
+              <label>
+                <input
+                  type="checkbox"
+                  className="accent-btn-green"
+                  checked={config.cellWidthSpec === "Auto"}
+                  onChange={(ev) => cellWidthChange(ev)}
+                />{" "}
+                Adjust width
+              </label>
+            </span>
+          </div>
+          <DayPilotScheduler {...config} ref={schedulerRef} />
         </div>
-        <DayPilotScheduler {...config} ref={schedulerRef} />
       </WithSideBar>
     </Fragment>
   );
 };
 
-export default Planner;
+export default Scheduler;
