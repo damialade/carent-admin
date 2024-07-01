@@ -19,6 +19,7 @@ const config: Config = {
         "dark-grey": "#1D3124",
         "btn-green": "#1BB652",
         "bg-hover": "#F1F1F1",
+        "light-green": "#92C2A3",
       },
       screens: {
         "phone-mini": "200px",
