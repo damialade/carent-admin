@@ -15,7 +15,7 @@ const VehicleTable = ({ data }) => {
   const columns = useMemo(
     () => [
       columnHelper.accessor("id", {
-        header: () => "S/N",
+        header: () => "SN",
         cell: (info) => info.getValue(),
       }),
       columnHelper.accessor("license_no", {
