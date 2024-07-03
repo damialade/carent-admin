@@ -19,6 +19,15 @@ const StatusPill = ({ value }: any) => {
           : null,
         level.startsWith("rented")
           ? " text-orange-900 border bg-orange-200 py-1 px-4 rounded-lg"
+          : null,
+        level.startsWith("open")
+          ? " text-[#3a9769] border bg-[#c7edda] py-1 px-2 rounded"
+          : null,
+        level.startsWith("new")
+          ? " text-[#3a9769] border bg-[#c7edda] py-1 px-2 rounded"
+          : null,
+        level.startsWith("closed")
+          ? " text-orange-900 border bg-orange-200 py-1 px-4 rounded-lg"
           : null
       )}
     >

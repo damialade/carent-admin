@@ -1,0 +1,62 @@
+[
+  {
+    "id": 2,
+    "reservationNo": "49",
+    "type": "Compact",
+    "name": "John Coffman",
+    "phone": "09067877889",
+    "checkout": "11/1/25",
+    "checkin": "12/12/24",
+    "created": "Colin Tegwaye",
+    "status": "Open",
+    "reservationType": "Walk-In"
+  },
+  {
+    "id": 2,
+    "reservationNo": "49",
+    "type": "Compact",
+    "name": "Shamima Adams",
+    "phone": "09067877889",
+    "checkout": "11/1/25",
+    "checkin": "12/12/24",
+    "created": "Damilola Aladeokin",
+    "status": "Open",
+    "reservationType": "Walk-In"
+  },
+  {
+    "id": 2,
+    "reservationNo": "49",
+    "type": "Compact",
+    "name": "Angela Putin",
+    "phone": "09067877889",
+    "checkout": "11/1/24",
+    "checkin": "12/1/24",
+    "created": "Colin Tegwaye",
+    "status": "Closed",
+    "reservationType": "Online"
+  },
+  {
+    "id": 2,
+    "reservationNo": "49",
+    "type": "Compact",
+    "name": "John Coffman",
+    "phone": "09067877889",
+    "checkout": "14/06/24",
+    "checkin": "12/06/24",
+    "created": "Colin Tegwaye",
+    "status": "Open",
+    "reservationType": "Telephone"
+  },
+  {
+    "id": 2,
+    "reservationNo": "49",
+    "type": "Compact",
+    "name": "Harry Maguire",
+    "phone": "09067877889",
+    "checkout": "23/08/24",
+    "checkin": "21/05/24",
+    "created": "Colin Tegwaye",
+    "status": "Open",
+    "reservationType": "Walk-In"
+  }
+]

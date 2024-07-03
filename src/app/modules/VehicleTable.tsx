@@ -55,8 +55,10 @@ const VehicleTable = ({ data }) => {
         cell: ({ row }) => {
           return (
             <ActionsPopOver
-              editFunc={() => {
-                router.push("/");
+              detailsFunc={() => {
+                router.push(
+                  `/dashboard/vehicles/vehicle-details/${row?.original?.id}`
+                );
               }}
               delFunc={() => {
                 router.push("/");
