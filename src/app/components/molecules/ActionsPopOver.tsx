@@ -7,7 +7,7 @@ import {
 } from "@headlessui/react";
 import Action from "../icons/Actions";
 
-const ActionsPopOver = ({ detailsFunc, delFunc }: any) => {
+const ActionsPopOver = ({ detailsFunc, editFunc }: any) => {
   return (
     <div className="w-full max-w-sm px-4">
       <Popover className="relative">
@@ -36,19 +36,19 @@ const ActionsPopOver = ({ detailsFunc, delFunc }: any) => {
               <PopoverPanel className="absolute left-0 z-10 w-50 -translate-x-1/2 transform px-4 ">
                 <div className="overflow-hidden rounded-lg shadow-lg ">
                   <div className="relative text-left text-[#78828f] bg-[#e8f8ee]">
+                    {editFunc && (
+                      <div
+                        onClick={editFunc}
+                        className="py-2 px-4 cursor-pointer"
+                      >
+                        Edit
+                      </div>
+                    )}
                     {detailsFunc && (
                       <div className="py-2 px-4 border-b-[1px] border-dark-grey">
                         <div onClick={detailsFunc} className="cursor-pointer">
                           Details
                         </div>
-                      </div>
-                    )}
-                    {delFunc && (
-                      <div
-                        onClick={delFunc}
-                        className="py-2 px-4 cursor-pointer"
-                      >
-                        Delete
                       </div>
                     )}
                   </div>

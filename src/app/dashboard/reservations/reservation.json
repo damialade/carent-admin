@@ -1,0 +1,122 @@
+[
+  {
+    "id": 1,
+    "customer": "Jdavie MacArthur",
+    "reservation-type": "Phone",
+    "vehicle-id": 2,
+    "vehicle-type": "Compact",
+    "vehicle-license_no": "5NPDH4AE0FH212551",
+    "checkout-date": "12/19/2023",
+    "checkin-date": "2/12/2024",
+    "branch": "Lagos Mainland",
+    "status": "Pending"
+  },
+  {
+    "id": 2,
+    "customer": "Dorthea Champkin",
+    "reservation-type": "Walkin",
+    "vehicle-id": 4,
+    "vehicle-type": "Mid-Size",
+    "vehicle-license_no": "1D7RW2GK8BS502941",
+    "checkout-date": "5/22/2024",
+    "checkin-date": "10/16/2023",
+    "branch": "Lagos Island",
+    "status": "Completed"
+  },
+  {
+    "id": 3,
+    "customer": "Maurits Fortesquieu",
+    "reservation-type": "Phone",
+    "vehicle-id": 3,
+    "vehicle-type": "Sedan",
+    "vehicle-license_no": "TRUUT28N531900000",
+    "checkout-date": "10/14/2023",
+    "checkin-date": "10/22/2023",
+    "branch": "Lagos Mainland",
+    "status": "In-Progress"
+  },
+  {
+    "id": 4,
+    "customer": "Jannelle Curragh",
+    "reservation-type": "Walkin",
+    "vehicle-id": 8,
+    "vehicle-type": "SUV",
+    "vehicle-license_no": "JTHFF2C21E2758277",
+    "checkout-date": "7/5/2023",
+    "checkin-date": "7/14/2023",
+    "branch": "Lagos Island",
+    "status": "In-Progress"
+  },
+  {
+    "id": 5,
+    "customer": "Maynord Domanski",
+    "reservation-type": "Online",
+    "vehicle-id": 7,
+    "vehicle-type": "Luxury",
+    "vehicle-license_no": "1G4HP54KX2U353425",
+    "checkout-date": "1/25/2024",
+    "checkin-date": "4/8/2024",
+    "branch": "Lagos Island",
+    "status": "Completed"
+  },
+  {
+    "id": 6,
+    "customer": "Cassandry Tattersill",
+    "reservation-type": "Phone",
+    "vehicle-id": 10,
+    "vehicle-type": "4 x 4",
+    "vehicle-license_no": "WBAEV334X4K405121",
+    "checkout-date": "9/4/2023",
+    "checkin-date": "7/3/2024",
+    "branch": "Lagos Mainland",
+    "status": "In-Progress"
+  },
+  {
+    "id": 7,
+    "customer": "Fenelia Akehurst",
+    "reservation-type": "Phone",
+    "vehicle-id": 12,
+    "vehicle-type": "Compact",
+    "vehicle-license_no": "WBAGN63494D342897",
+    "checkout-date": "4/20/2024",
+    "checkin-date": "5/29/2024",
+    "branch": "Lagos Island",
+    "status": "Pending"
+  },
+  {
+    "id": 8,
+    "customer": "Priscilla Jados",
+    "reservation-type": "Online",
+    "vehicle-id": 6,
+    "vehicle-type": "Luxury",
+    "vehicle-license_no": "5J6TF3H51FL951354",
+    "checkout-date": "11/10/2023",
+    "checkin-date": "10/17/2023",
+    "branch": "Lagos Mainland",
+    "status": "In-Progress"
+  },
+  {
+    "id": 9,
+    "customer": "Gina Mc Harg",
+    "reservation-type": "Walkin",
+    "vehicle-id": 9,
+    "vehicle-type": "Sedan",
+    "vehicle-license_no": "WA1CYBFE4AD159130",
+    "checkout-date": "8/24/2023",
+    "checkin-date": "8/26/2023",
+    "branch": "Lagos Island",
+    "status": "Completed"
+  },
+  {
+    "id": 10,
+    "customer": "Robinette Lesser",
+    "reservation-type": "Online",
+    "vehicle-id": 1,
+    "vehicle-type": "SUV",
+    "vehicle-license_no": "5FPYK1F25EB033829",
+    "checkout-date": "1/17/2024",
+    "checkin-date": "12/10/2023",
+    "branch": "Lagos Mainland",
+    "status": "Pending"
+  }
+]

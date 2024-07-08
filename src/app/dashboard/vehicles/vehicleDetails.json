@@ -37,6 +37,21 @@
     "priority": "High",
     "assignedto": "Joe Mitchel",
     "todoNote": "Urgent",
-    "status": "New"
+    "status": "New",
+    "paymentID": "1",
+    "paymentType": "Advance Payment",
+    "paymentAmt": "40,000",
+    "paymentMethod": "Debit Card",
+    "paymentDate": "11/2/2024",
+    "paymentDesc": "payment for 4 days - GMC SUV",
+    "createdBy": "Ashlee Sunday",
+    "invoiceID": "1",
+    "invoiceAmt": "40,000",
+    "iAmtPaid": "30,000",
+    "outstanding": "4,000",
+    "billTo": "Customer 3",
+    "paymentTo": "Classic Motors",
+    "invoiceDate": "13/4/2024",
+    "iCreatedBy": "Ashlee Sunday"
   }
 ]

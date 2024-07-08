@@ -2,9 +2,11 @@
 import React, { Fragment, useState } from "react";
 import { AppLogo } from "@/components/atoms/AppLogo";
 import { EyeFilled, EyeInvisibleFilled } from "@ant-design/icons";
+import { useRouter } from "next/navigation";
 
 const LoginIndex = () => {
   const [open, setOpen] = useState(false);
+  const router = useRouter();
 
   return (
     <Fragment>
@@ -72,6 +74,9 @@ const LoginIndex = () => {
                 <div className="mt-7 max-w-[75%] m-auto ">
                   <button
                     type="button"
+                    onClick={() => {
+                      router.push("/dashboard");
+                    }}
                     className="bg-btn-green text-lg font-semibold text-app-white w-full p-3 rounded-full flex items-center justify-center space-x-6 shadow-md"
                   >
                     <span>Login</span>

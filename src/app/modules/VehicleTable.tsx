@@ -60,8 +60,10 @@ const VehicleTable = ({ data }) => {
                   `/dashboard/vehicles/vehicle-details/${row?.original?.id}`
                 );
               }}
-              delFunc={() => {
-                router.push("/");
+              editFunc={() => {
+                router.push(
+                  `/dashboard/vehicles/edit-vehicle/${row?.original?.id}`
+                );
               }}
             />
           );

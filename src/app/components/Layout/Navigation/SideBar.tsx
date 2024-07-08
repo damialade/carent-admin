@@ -61,9 +61,9 @@ const paths: {
   },
   {
     id: 6,
-    path: "/agreements",
-    text: "Agreements",
-    icon: Agreements,
+    path: "/drivers",
+    text: "Drivers",
+    icon: Customers,
   },
   {
     id: 7,
@@ -71,19 +71,6 @@ const paths: {
     text: "Reports",
     icon: Reports,
   },
-  // {
-  //   id: 2,
-  //   text: "Tables",
-  //   icon: Tables,
-  //   subMenu: [
-  //     {
-  //       id: 3,
-  //       path: "tables/revenue-centre",
-  //       text: "Revenue Centre",
-  //       icon: Dot,
-  //     },
-  //   ],
-  // },
 ];
 
 const className =

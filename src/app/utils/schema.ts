@@ -1,6 +1,4 @@
-import * as yup from "yup";
-
-const addVehicleInit = {
+const vehicleInit = {
   vehicles: [
     {
       vehicleName: "",
@@ -13,6 +11,11 @@ const addVehicleInit = {
       registration: "",
       vImage: "",
       status: "",
+      doors: "",
+      tank: "",
+      cylinders: "",
+      vOptions: "",
+      odometer: "",
       fType: "",
       eType: "",
       ownership: "",
@@ -20,12 +23,52 @@ const addVehicleInit = {
       bType: "",
       mileage: "",
       transmission: "",
+      leaseComp: "",
+      leaseAmt: "",
+      deposit: "",
+      leaseTerm: "",
+      leaseExp: "",
+      serviceDate: "",
+      purchaseDate: "",
+      depreciation: "",
+      interest: "",
       insuranceAmount: "",
       insuranceComp: "",
+      insuranceDuration: "",
+      insuranceStartDate: "",
+      insuranceExp: "",
       licenseIssueDate: "",
+      issuingState: "",
       licenseExpDate: "",
+      roadTax: "",
+      issuingBody: "",
     },
   ],
 };
 
-export { addVehicleInit };
+const customerInit = {
+  customers: [
+    {
+      licenseNo: "",
+      customerName: "",
+      emergency: "",
+      eName: "",
+      email: "",
+      status: "",
+      phone: "",
+      licenseIssueDate: "",
+      licenseExp: "",
+      address: "",
+      drivingLicense: "",
+      dob: "",
+      cImage: "",
+      insuranceComp: "",
+      policy: "",
+      licenseStartDate: "",
+      state: "",
+      country: "",
+    },
+  ],
+};
+
+export { vehicleInit, customerInit };

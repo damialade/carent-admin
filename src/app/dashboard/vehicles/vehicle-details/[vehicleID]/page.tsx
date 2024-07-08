@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   title: "Vehicle-Details | Carent-Admin",
 };
 
-const AddVehiclePage = () => {
+const VehicleDPage = () => {
   return (
     <Fragment>
       <VehicleDetailsPage />
@@ -14,4 +14,4 @@ const AddVehiclePage = () => {
   );
 };
 
-export default AddVehiclePage;
+export default VehicleDPage;

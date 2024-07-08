@@ -1,4 +1,5 @@
 import { HTMLAttributes, SVGAttributes } from "react";
+import Customers from "@/components/icons/Customers";
 
 export interface WithClassname
   extends Pick<HTMLAttributes<HTMLElement>, "className"> {}
@@ -32,6 +33,28 @@ export type Vehicle = {
   vehicle_type: string;
   vin: string;
   fuel_type: string;
+};
+
+export type Customer = {
+  id: number;
+  licenseNo: string;
+  customerName: string;
+  customeID: string;
+  email: string;
+  status: string;
+  phone: string;
+  licenseExp: string;
+  address: string;
+};
+
+export type Driver = {
+  id: number;
+  licenseNo: string;
+  full_name: string;
+  issue_date: string;
+  status: string;
+  phone: string;
+  exp_date: string;
 };
 
 export type Reservations = {
@@ -87,4 +110,19 @@ export type VehicleDetails = {
   assignedto: string;
   todoNote: string;
   status: string;
+  paymentID: string;
+  paymentType: string;
+  paymentAmt: string;
+  paymentMethod: string;
+  paymentDate: string;
+  paymentDesc: string;
+  createdBy: string;
+  // invoiceID: string;
+  // invoiceAmt: string;
+  // iAmtPaid: string;
+  // outstanding: string;
+  // billTo: string;
+  // paymentTo: string;
+  // invoiceDate: string;
+  // iCreatedBy: string;
 };

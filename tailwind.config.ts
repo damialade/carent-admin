@@ -35,6 +35,8 @@ const config: Config = {
         "desktop-wide": "1440px",
         "desktop-2xl": "1536px",
         "desktop-des": "1728px",
+        "res-sm": { min: "200px", max: "1279px" },
+        "res-md": { min: "1280px", max: "1728px" },
       },
     },
   },
