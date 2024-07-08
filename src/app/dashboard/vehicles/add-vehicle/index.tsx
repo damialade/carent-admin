@@ -6,16 +6,11 @@ import Back from "@/components/icons/Back";
 import { useRouter } from "next/navigation";
 import { Row, Col } from "antd";
 import { useForm, useFieldArray } from "react-hook-form";
-import { addVehicleInit } from "@/utils/schema";
+import { vehicleInit } from "@/utils/schema";
 
 const AddVehicle = () => {
-  const {
-    register,
-    watch,
-    control,
-    formState: { errors, isSubmitted },
-  } = useForm({
-    defaultValues: addVehicleInit,
+  const { watch, control } = useForm({
+    defaultValues: vehicleInit,
   });
   const { fields, append, remove } = useFieldArray({
     control,
@@ -101,7 +96,7 @@ const AddVehicle = () => {
                             </p>
                           </div>
                           <p className="text-light-green text-md">
-                            Step 1 of 3
+                            Step 1 of 4
                           </p>
                         </div>
 
@@ -110,7 +105,7 @@ const AddVehicle = () => {
                             <div className="relative pb-3.5">
                               <label
                                 htmlFor="vehicleName"
-                                className="block mb-2 text-sm font-medium text-gray-900 "
+                                className="block mb-2 text-sm font-bold text-gray-900 "
                               >
                                 Vehicle Name
                               </label>
@@ -126,7 +121,7 @@ const AddVehicle = () => {
                             <div className="relative pb-3.5">
                               <label
                                 htmlFor="vin"
-                                className="block mb-2 text-sm font-medium text-gray-900 "
+                                className="block mb-2 text-sm font-bold text-gray-900 "
                               >
                                 VIN
                               </label>
@@ -145,7 +140,7 @@ const AddVehicle = () => {
                             <div className="relative pb-3.5 ">
                               <label
                                 htmlFor="license"
-                                className="block mb-2 text-sm font-medium text-gray-900 "
+                                className="block mb-2 text-sm font-bold text-gray-900 "
                               >
                                 License Plate
                               </label>
@@ -162,7 +157,7 @@ const AddVehicle = () => {
                             <div className="relative pb-3.5 ">
                               <label
                                 htmlFor="vType"
-                                className="block mb-2 text-sm font-medium text-gray-900 "
+                                className="block mb-2 text-sm font-bold text-gray-900 "
                               >
                                 Vehicle Type
                               </label>
@@ -180,7 +175,7 @@ const AddVehicle = () => {
                             <div className="relative pb-3.5 ">
                               <label
                                 htmlFor="year"
-                                className="block mb-2 text-sm font-medium text-gray-900 "
+                                className="block mb-2 text-sm font-bold text-gray-900 "
                               >
                                 Year
                               </label>
@@ -197,7 +192,7 @@ const AddVehicle = () => {
                             <div className="relative pb-3.5 ">
                               <label
                                 htmlFor="model"
-                                className="block mb-2 text-sm font-medium text-gray-900 "
+                                className="block mb-2 text-sm font-bold text-gray-900 "
                               >
                                 Vehicle Model
                               </label>
@@ -215,7 +210,7 @@ const AddVehicle = () => {
                             <div className="relative pb-3.5 ">
                               <label
                                 htmlFor="make"
-                                className="block mb-2 text-sm font-medium text-gray-900 "
+                                className="block mb-2 text-sm font-bold text-gray-900 "
                               >
                                 Vehicle Make
                               </label>
@@ -230,10 +225,10 @@ const AddVehicle = () => {
                           <Col xs={24} sm={12}>
                             <div className="relative pb-3.5 ">
                               <label
-                                htmlFor="state"
-                                className="block mb-2 text-sm font-medium text-gray-900 "
+                                htmlFor="mileage"
+                                className="block mb-2 text-sm font-bold text-gray-900 "
                               >
-                                State of License Issue
+                                Mileage
                               </label>
 
                               <input
@@ -247,8 +242,45 @@ const AddVehicle = () => {
                           <Col xs={24} sm={12}>
                             <div className="relative pb-3.5 ">
                               <label
+                                htmlFor="status"
+                                className="block mb-2 text-sm font-bold text-gray-900 "
+                              >
+                                Vehicle Status
+                              </label>
+
+                              <select className="w-full h-fit px-3 py-2 leading-tight placeholder-white text-gray-900 border border-gray-300 rounded-lg bg-gray-50">
+                                <option
+                                  value="available"
+                                  className="text-app-black"
+                                >
+                                  Available
+                                </option>
+                                <option
+                                  value="in-service"
+                                  className="text-app-black"
+                                >
+                                  In-Service
+                                </option>
+                                <option
+                                  value="rented"
+                                  className="text-app-black"
+                                >
+                                  Rented
+                                </option>
+                                <option
+                                  value="accidented"
+                                  className="text-app-black"
+                                >
+                                  Accidented
+                                </option>
+                              </select>
+                            </div>
+                          </Col>
+                          <Col xs={24} sm={12}>
+                            <div className="relative pb-3.5 ">
+                              <label
                                 htmlFor="vImage"
-                                className="block mb-2 text-sm font-medium text-gray-900 "
+                                className="block mb-2 text-sm font-bold text-gray-900 "
                               >
                                 Upload Vehicle Images
                               </label>
@@ -267,82 +299,424 @@ const AddVehicle = () => {
                         <div className="flex justify-between items-center">
                           <div className="space-y-2">
                             <p className="text-app-dark text-xl font-extrabold">
-                              Classification
+                              General Information
                             </p>
                             <p className="text-light-green text-sm">
                               Please enter the vehicle classification
                             </p>
                           </div>
                           <p className="text-light-green text-md">
-                            Step 2 of 3
+                            Step 2 of 4
                           </p>
                         </div>
 
                         <Row gutter={[10, 10]}>
                           <Col xs={24} sm={12} key={field.id}>
-                            <div className="relative pb-3.5">
-                              <label
-                                htmlFor="status"
-                                className="block mb-2 text-sm font-medium text-gray-900 "
-                              >
-                                Status
-                              </label>
+                            <div className="flex space-x-8">
+                              <div className="relative w-[33%] pb-3.5">
+                                <label
+                                  htmlFor="doors"
+                                  className="block mb-2 text-sm font-bold text-gray-900 "
+                                >
+                                  Doors
+                                </label>
 
-                              <input
-                                type="text"
-                                id="status"
-                                className="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs"
-                              />
+                                <input
+                                  type="text"
+                                  id="doors"
+                                  className="block p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs"
+                                />
+                              </div>
+                              <div className="relative w-[33%] pb-3.5">
+                                <label
+                                  htmlFor="tank"
+                                  className="block mb-2 text-sm font-bold text-gray-900 "
+                                >
+                                  Tank Size
+                                </label>
+
+                                <input
+                                  type="text"
+                                  id="tank"
+                                  className="block p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs"
+                                />
+                              </div>
+                              <div className="relative w-[33%] pb-3.5">
+                                <label
+                                  htmlFor="cylinders"
+                                  className="block mb-2 text-sm font-bold text-gray-900 "
+                                >
+                                  Cylinders
+                                </label>
+
+                                <input
+                                  type="text"
+                                  id="cylinders"
+                                  className="block p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs"
+                                />
+                              </div>
                             </div>
                           </Col>
                           <Col xs={24} sm={12}>
-                            <div className="relative pb-3.5">
-                              <label
-                                htmlFor="fType"
-                                className="block mb-2 text-sm font-medium text-gray-900 "
-                              >
-                                Fuel Type
-                              </label>
+                            <div className="flex space-x-8">
+                              <div className="relative w-[33%] pb-3.5">
+                                <label
+                                  htmlFor="fTYpe"
+                                  className="block mb-2 text-sm font-bold text-gray-900 "
+                                >
+                                  Fuel Type
+                                </label>
 
-                              <input
-                                type="text"
-                                id="vin"
-                                className="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs"
-                              />
+                                <select className="w-full h-fit px-3 py-2 leading-tight placeholder-white text-gray-900 border border-gray-300 rounded-lg bg-gray-50">
+                                  <option
+                                    value="petrol"
+                                    className="text-app-black"
+                                  >
+                                    Petrol
+                                  </option>
+                                  <option
+                                    value="diesel"
+                                    className="text-app-black"
+                                  >
+                                    Diesel
+                                  </option>
+                                  <option
+                                    value="electric"
+                                    className="text-app-black"
+                                  >
+                                    Electric
+                                  </option>
+                                  <option
+                                    value="gasoline"
+                                    className="text-app-black"
+                                  >
+                                    Gasoline
+                                  </option>
+                                </select>
+                              </div>
+                              <div className="relative w-[33%] pb-3.5">
+                                <label
+                                  htmlFor="eType"
+                                  className="block mb-2 text-sm font-bold text-gray-900 "
+                                >
+                                  Engine Type
+                                </label>
+
+                                <select className="w-full h-fit px-3 py-2 leading-tight placeholder-white text-gray-900 border border-gray-300 rounded-lg bg-gray-50">
+                                  <option
+                                    value="onetotwo"
+                                    className="text-app-black"
+                                  >
+                                    1.0 - 2.0-litre engines
+                                  </option>
+                                  <option
+                                    value="twotothree"
+                                    className="text-app-black"
+                                  >
+                                    2.0 - 3.0-litre engines
+                                  </option>
+                                  <option
+                                    value="threeplus"
+                                    className="text-app-black"
+                                  >
+                                    3.0-litre+ engines
+                                  </option>
+                                </select>
+                              </div>
+                              <div className="relative w-[33%] pb-3.5">
+                                <label
+                                  htmlFor="transmission"
+                                  className="block mb-2 text-sm font-bold text-gray-900 "
+                                >
+                                  Transmission
+                                </label>
+
+                                <select className="w-full h-fit px-3 py-2 leading-tight placeholder-white text-gray-900 border border-gray-300 rounded-lg bg-gray-50">
+                                  <option
+                                    value="manual"
+                                    className="text-app-black"
+                                  >
+                                    Manual
+                                  </option>
+                                  <option
+                                    value="automatic"
+                                    className="text-app-black"
+                                  >
+                                    Automatic
+                                  </option>
+                                </select>
+                              </div>
                             </div>
                           </Col>
                         </Row>
 
                         <Row gutter={[10, 10]}>
                           <Col xs={24} sm={12}>
-                            <div className="relative pb-3.5 ">
-                              <label
-                                htmlFor="ownership"
-                                className="block mb-2 text-sm font-medium text-gray-900 "
-                              >
-                                Ownership
-                              </label>
+                            <div className="flex space-x-8">
+                              <div className="relative w-[50%] pb-3.5">
+                                <label
+                                  htmlFor="color"
+                                  className="block mb-2 text-sm font-bold text-gray-900 "
+                                >
+                                  Color
+                                </label>
 
-                              <input
-                                type="text"
-                                id="ownership"
-                                className="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs"
-                              />
+                                <input
+                                  type="text"
+                                  id="color"
+                                  className="block p-2 w-full text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs"
+                                />
+                              </div>
+                              <div className="relative w-[50%] pb-3.5">
+                                <label
+                                  htmlFor="odometer"
+                                  className="block mb-2 text-sm font-bold text-gray-900 "
+                                >
+                                  Odometer
+                                </label>
+
+                                <input
+                                  type="text"
+                                  id="odometer"
+                                  className="block p-2 w-full text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs"
+                                />
+                              </div>
                             </div>
                           </Col>
 
                           <Col xs={24} sm={12}>
                             <div className="relative pb-3.5 ">
                               <label
-                                htmlFor="eType"
-                                className="block mb-2 text-sm font-medium text-gray-900 "
+                                htmlFor="vOptions"
+                                className="block mb-2 text-sm font-bold text-gray-900 "
                               >
-                                Engine Type
+                                Vehicle Options
+                              </label>
+                              <div className="flex space-x-4">
+                                <div className="flex items-center">
+                                  <input
+                                    type="checkbox"
+                                    className="text-btn-green rounded-md accent-btn-green ring-app-green"
+                                  />
+                                  <p className="font-medium text-app-darkGray">
+                                    GPS Tracker
+                                  </p>
+                                </div>
+                                <div className="flex items-center">
+                                  <input
+                                    type="checkbox"
+                                    className="text-btn-green rounded-md accent-btn-green ring-app-green"
+                                  />
+                                  <p className="font-medium text-app-darkGray">
+                                    X Box
+                                  </p>
+                                </div>
+                              </div>
+                            </div>
+                          </Col>
+                        </Row>
+                      </div>
+                      <div className="bg-app-white my-2 py-3 px-6 rounded-lg shadow-2xl">
+                        <div className="flex justify-between items-center">
+                          <div className="space-y-2">
+                            <p className="text-app-dark text-xl font-extrabold">
+                              License & Insurance
+                            </p>
+                            <p className="text-light-green text-sm">
+                              Please enter additional info
+                            </p>
+                          </div>
+                          <p className="text-light-green text-md">
+                            Step 3 of 4
+                          </p>
+                        </div>
+
+                        <Row gutter={[10, 10]}>
+                          <Col xs={24} sm={12} key={field.id}>
+                            <div className="flex space-x-8">
+                              <div className="relative w-[50%] pb-3.5">
+                                <label
+                                  htmlFor="insuranceComp"
+                                  className="block mb-2 text-sm font-bold text-gray-900 "
+                                >
+                                  Insurance Company
+                                </label>
+
+                                <input
+                                  type="text"
+                                  id="insuranceComp"
+                                  className="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs"
+                                />
+                              </div>
+                              <div className="relative w-[50%] pb-3.5">
+                                <label
+                                  htmlFor="insuranceAmount"
+                                  className="block mb-2 text-sm font-bold text-gray-900 "
+                                >
+                                  Insurance Amount
+                                </label>
+
+                                <input
+                                  type="text"
+                                  id="insuranceAmount"
+                                  className="block p-2 w-full text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs"
+                                />
+                              </div>
+                            </div>
+                          </Col>
+                          <Col xs={24} sm={12}>
+                            <div className="flex space-x-8">
+                              <div className="relative w-[50%] pb-3.5">
+                                <label
+                                  htmlFor="insuranceIssueDate"
+                                  className="block mb-2 text-sm font-bold text-gray-900 "
+                                >
+                                  Insurance Issue Date
+                                </label>
+
+                                <input
+                                  type="date"
+                                  id="insuranceIssueDate"
+                                  className="block p-2 w-full text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs"
+                                />
+                              </div>
+                              <div className="relative w-[50%] pb-3.5">
+                                <label
+                                  htmlFor="insuranceDuration"
+                                  className="block mb-2 text-sm font-bold text-gray-900 "
+                                >
+                                  Insurance Duration
+                                </label>
+
+                                <select className="w-full h-fit px-3 py-2 leading-tight placeholder-white text-gray-900 border border-gray-300 rounded-lg bg-gray-50">
+                                  <option value="" className="text-app-black">
+                                    Insurance Duration
+                                  </option>
+                                  <option
+                                    value="three"
+                                    className="text-app-black"
+                                  >
+                                    3 months
+                                  </option>
+                                  <option
+                                    value="six"
+                                    className="text-app-black"
+                                  >
+                                    6 months
+                                  </option>
+                                  <option
+                                    value="twelve"
+                                    className="text-app-black"
+                                  >
+                                    12 months
+                                  </option>
+                                  <option
+                                    value="eighteen"
+                                    className="text-app-black"
+                                  >
+                                    18 months
+                                  </option>
+                                </select>
+                              </div>
+                            </div>
+                          </Col>
+                        </Row>
+                        <Row gutter={[10, 10]}>
+                          <Col xs={24} sm={12} key={field.id}>
+                            <div className="flex space-x-8">
+                              <div className="relative w-[50%] pb-3.5">
+                                <label
+                                  htmlFor="insuranceExp"
+                                  className="block mb-2 text-sm font-bold text-gray-900 "
+                                >
+                                  Insurance Expiry
+                                </label>
+
+                                <input
+                                  type="date"
+                                  id="insuranceExp"
+                                  className="block p-2 w-full text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs"
+                                />
+                              </div>
+                              <div className="relative w-[50%] pb-3.5">
+                                <label
+                                  htmlFor="licenseIssueDate"
+                                  className="block mb-2 text-sm font-bold text-gray-900 "
+                                >
+                                  License Issue Date
+                                </label>
+
+                                <input
+                                  type="date"
+                                  id="licenseIssueDate"
+                                  className="block p-2 w-full text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs"
+                                />
+                              </div>
+                            </div>
+                          </Col>
+                          <Col xs={24} sm={12}>
+                            <div className="flex space-x-8">
+                              <div className="relative w-[50%] pb-3.5">
+                                <label
+                                  htmlFor="licenseExpDate"
+                                  className="block mb-2 text-sm font-bold text-gray-900 "
+                                >
+                                  License Expiry Date
+                                </label>
+
+                                <input
+                                  type="text"
+                                  id="licenseExpDate"
+                                  className="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs"
+                                />
+                              </div>
+                              <div className="relative w-[50%] pb-3.5">
+                                <label
+                                  htmlFor="issuingState"
+                                  className="block mb-2 text-sm font-bold text-gray-900 "
+                                >
+                                  License Issuing State
+                                </label>
+
+                                <input
+                                  type="text"
+                                  id="issuingState"
+                                  className="block p-2 w-full text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs"
+                                />
+                              </div>
+                            </div>
+                          </Col>
+                        </Row>
+
+                        <Row gutter={[10, 10]}>
+                          <Col xs={24} sm={12} key={field.id}>
+                            <div className="relative pb-3.5">
+                              <label
+                                htmlFor="roadTax"
+                                className="block mb-2 text-sm font-bold text-gray-900 "
+                              >
+                                Road Tax Expiry
+                              </label>
+
+                              <input
+                                type="date"
+                                id="roadTax"
+                                className="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs"
+                              />
+                            </div>
+                          </Col>
+                          <Col xs={24} sm={12}>
+                            <div className="relative pb-3.5">
+                              <label
+                                htmlFor="issueBody"
+                                className="block mb-2 text-sm font-bold text-gray-900 "
+                              >
+                                Issuing Body
                               </label>
 
                               <input
                                 type="text"
-                                id="eType"
+                                id="issuingBody"
                                 className="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs"
                               />
                             </div>
@@ -352,153 +726,182 @@ const AddVehicle = () => {
                       <div className="bg-app-white my-2 py-3 px-6 rounded-lg shadow-2xl">
                         <div className="flex justify-between items-center">
                           <div className="space-y-2">
-                            <p className="text-app-dark text-xl font-extrabold">
-                              Additional Details
-                            </p>
-                            <p className="text-light-green text-sm">
-                              Please enter additional info
+                            <p className="text-app-dark text-xl font-extrabold pb-6">
+                              Ownership
                             </p>
                           </div>
                           <p className="text-light-green text-md">
-                            Step 3 of 3
+                            Step 4 of 4
                           </p>
                         </div>
 
                         <Row gutter={[10, 10]}>
                           <Col xs={24} sm={12} key={field.id}>
-                            <div className="relative pb-3.5">
-                              <label
-                                htmlFor="color"
-                                className="block mb-2 text-sm font-medium text-gray-900 "
-                              >
-                                Color
-                              </label>
+                            <div className="flex space-x-8">
+                              <div className="relative w-[50%] pb-3.5">
+                                <label
+                                  htmlFor="leaseComp"
+                                  className="block mb-2 text-sm font-bold text-gray-900 "
+                                >
+                                  Leasing Company
+                                </label>
 
-                              <input
-                                type="text"
-                                id="color"
-                                className="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs"
-                              />
+                                <input
+                                  type="text"
+                                  id="leaseComp"
+                                  className="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs"
+                                />
+                              </div>
+                              <div className="relative w-[50%] pb-3.5">
+                                <label
+                                  htmlFor="leaseAmt"
+                                  className="block mb-2 text-sm font-bold text-gray-900 "
+                                >
+                                  Lease Amount
+                                </label>
+
+                                <input
+                                  type="text"
+                                  id="leaseAmt"
+                                  className="block p-2 w-full text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs"
+                                />
+                              </div>
                             </div>
                           </Col>
                           <Col xs={24} sm={12}>
-                            <div className="relative pb-3.5">
-                              <label
-                                htmlFor="bType"
-                                className="block mb-2 text-sm font-medium text-gray-900 "
-                              >
-                                Body Type
-                              </label>
+                            <div className="flex space-x-8">
+                              <div className="relative w-[50%] pb-3.5">
+                                <label
+                                  htmlFor="leaseExp"
+                                  className="block mb-2 text-sm font-bold text-gray-900 "
+                                >
+                                  Lease Expiry Date
+                                </label>
 
-                              <input
-                                type="text"
-                                id="bType"
-                                className="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs"
-                              />
-                            </div>
-                          </Col>
-                        </Row>
+                                <input
+                                  type="date"
+                                  id="leaseExp"
+                                  className="block p-2 w-full text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs"
+                                />
+                              </div>
+                              <div className="relative w-[50%] pb-3.5">
+                                <label
+                                  htmlFor="leaseTerm"
+                                  className="block mb-2 text-sm font-bold text-gray-900 "
+                                >
+                                  Lease Term
+                                </label>
 
-                        <Row gutter={[10, 10]}>
-                          <Col xs={24} sm={12}>
-                            <div className="relative pb-3.5 ">
-                              <label
-                                htmlFor="transmission"
-                                className="block mb-2 text-sm font-medium text-gray-900 "
-                              >
-                                Transmission
-                              </label>
-
-                              <input
-                                type="text"
-                                id="transmission"
-                                className="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs"
-                              />
-                            </div>
-                          </Col>
-
-                          <Col xs={24} sm={12}>
-                            <div className="relative pb-3.5 ">
-                              <label
-                                htmlFor="mileage"
-                                className="block mb-2 text-sm font-medium text-gray-900 "
-                              >
-                                Mileage
-                              </label>
-
-                              <input
-                                type="text"
-                                id="mileage"
-                                className="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs"
-                              />
-                            </div>
-                          </Col>
-                        </Row>
-                        <Row gutter={[10, 10]}>
-                          <Col xs={24} sm={12} key={field.id}>
-                            <div className="relative pb-3.5">
-                              <label
-                                htmlFor="insuranceAmount"
-                                className="block mb-2 text-sm font-medium text-gray-900 "
-                              >
-                                Insurance Amount
-                              </label>
-
-                              <input
-                                type="text"
-                                id="insuranceAmount"
-                                className="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs"
-                              />
-                            </div>
-                          </Col>
-                          <Col xs={24} sm={12}>
-                            <div className="relative pb-3.5">
-                              <label
-                                htmlFor="insuranceComp"
-                                className="block mb-2 text-sm font-medium text-gray-900 "
-                              >
-                                Insurance Company
-                              </label>
-
-                              <input
-                                type="text"
-                                id="insuranceComp"
-                                className="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs"
-                              />
+                                <select className="w-full h-fit px-3 py-2 leading-tight placeholder-white text-gray-900 border border-gray-300 rounded-lg bg-gray-50">
+                                  <option value="" className="text-app-black">
+                                    Lease Term
+                                  </option>
+                                  <option
+                                    value="three"
+                                    className="text-app-black"
+                                  >
+                                    3 months
+                                  </option>
+                                  <option
+                                    value="six"
+                                    className="text-app-black"
+                                  >
+                                    6 months
+                                  </option>
+                                  <option
+                                    value="twelve"
+                                    className="text-app-black"
+                                  >
+                                    12 months
+                                  </option>
+                                  <option
+                                    value="eighteen"
+                                    className="text-app-black"
+                                  >
+                                    18 months
+                                  </option>
+                                </select>
+                              </div>
                             </div>
                           </Col>
                         </Row>
                         <Row gutter={[10, 10]}>
                           <Col xs={24} sm={12} key={field.id}>
-                            <div className="relative pb-3.5">
-                              <label
-                                htmlFor="licenseIssueDate"
-                                className="block mb-2 text-sm font-medium text-gray-900 "
-                              >
-                                License Issue Date
-                              </label>
+                            <div className="flex space-x-8">
+                              <div className="relative w-[33%] pb-3.5">
+                                <label
+                                  htmlFor="deposit"
+                                  className="block mb-2 text-sm font-bold text-gray-900 "
+                                >
+                                  Deposit
+                                </label>
 
-                              <input
-                                type="date"
-                                id="licenseIssueDate"
-                                className="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs"
-                              />
+                                <input
+                                  type="text"
+                                  id="deposit"
+                                  className="block p-2 w-full text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs"
+                                />
+                              </div>
+                              <div className="relative w-[33%] pb-3.5">
+                                <label
+                                  htmlFor="serviceDate"
+                                  className="block mb-2 text-sm font-bold text-gray-900 "
+                                >
+                                  In-Service Date
+                                </label>
+
+                                <input
+                                  type="date"
+                                  id="serviceDate"
+                                  className="block p-2 w-full text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs"
+                                />
+                              </div>
+                              <div className="relative w-[33%] pb-3.5">
+                                <label
+                                  htmlFor="purchaseDate"
+                                  className="block mb-2 text-sm font-bold text-gray-900 "
+                                >
+                                  Purchase Date
+                                </label>
+
+                                <input
+                                  type="date"
+                                  id="purchaseDate"
+                                  className="block p-2 w-full text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs"
+                                />
+                              </div>
                             </div>
                           </Col>
                           <Col xs={24} sm={12}>
-                            <div className="relative pb-3.5">
-                              <label
-                                htmlFor="licenseExpDate"
-                                className="block mb-2 text-sm font-medium text-gray-900 "
-                              >
-                                License Expiry Date
-                              </label>
+                            <div className="flex space-x-8">
+                              <div className="relative w-[50%] pb-3.5">
+                                <label
+                                  htmlFor="depreciation"
+                                  className="block mb-2 text-sm font-bold text-gray-900 "
+                                >
+                                  Depreciation
+                                </label>
 
-                              <input
-                                type="date"
-                                id="licenseExpDate"
-                                className="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs"
-                              />
+                                <input
+                                  type="text"
+                                  id="depreciation"
+                                  className="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs"
+                                />
+                              </div>
+                              <div className="relative w-[50%] pb-3.5">
+                                <label
+                                  htmlFor="interest"
+                                  className="block mb-2 text-sm font-bold text-gray-900 "
+                                >
+                                  Interest
+                                </label>
+
+                                <input
+                                  type="text"
+                                  id="interest"
+                                  className="block p-2 w-full text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs"
+                                />
+                              </div>
                             </div>
                           </Col>
                         </Row>
@@ -510,7 +913,7 @@ const AddVehicle = () => {
                 <button
                   type="button"
                   className="p-2 my-2 rounded-xl text-sm text-white bg-btn-green"
-                  onClick={() => append({ ...addVehicleInit.vehicles[0] })}
+                  onClick={() => append({ ...vehicleInit.vehicles[0] })}
                 >
                   Add Another Vehicle
                 </button>
