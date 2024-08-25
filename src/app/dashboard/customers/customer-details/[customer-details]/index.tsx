@@ -94,18 +94,6 @@ const CustomerDetailsPage = () => {
                 </div>
               </div>
             </div>
-
-            <div className="flex space-x-3 items-center">
-              <div
-                onClick={() => {
-                  router.push("/dashboard/reservations/add-reservation");
-                }}
-                className="bg-btn-green flex items-center cursor-pointer space-x-6 text-app-white font-medium border border-dotted rounded-xl py-2 px-4"
-              >
-                <Add fill="#fff" />
-                <p>Create Reservation</p>
-              </div>
-            </div>
           </div>
           <div>
             <ul className="flex px-6 py-3 space-x-5 font-medium">
