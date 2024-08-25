@@ -129,6 +129,7 @@ const AddReservation = () => {
                           <input
                             type="date"
                             id="dob"
+                            max="2006-01-01"
                             className="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs"
                           />
                         </div>

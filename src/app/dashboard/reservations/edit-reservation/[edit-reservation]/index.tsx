@@ -8,6 +8,8 @@ import { Row, Col } from "antd";
 
 const EditReservation = () => {
   const router = useRouter();
+  const drivers = require("../../../drivers/drivers.json");
+
   return (
     <Fragment>
       <WithSideBar>
@@ -59,7 +61,7 @@ const EditReservation = () => {
                           Please enter renter's info
                         </p>
                       </div>
-                      <p className="text-light-green text-md">Step 1 of 5</p>
+                      <p className="text-light-green text-md">Step 1 of 4</p>
                     </div>
 
                     <Row gutter={[10, 10]}>
@@ -127,6 +129,7 @@ const EditReservation = () => {
                           <input
                             type="date"
                             id="dob"
+                            max="2006-01-01"
                             className="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs"
                           />
                         </div>
@@ -182,7 +185,7 @@ const EditReservation = () => {
                           Please enter the charges
                         </p>
                       </div>
-                      <p className="text-light-green text-md">Step 2 of 5</p>
+                      <p className="text-light-green text-md">Step 2 of 4</p>
                     </div>
                     <div className="px-8 space-y-2 py-4">
                       <div className="flex justify-between">
@@ -256,13 +259,13 @@ const EditReservation = () => {
                         Please enter the rental information
                       </p>
                     </div>
-                    <p className="text-light-green text-md">Step 3 of 5</p>
+                    <p className="text-light-green text-md">Step 3 of 4</p>
                   </div>
 
                   <Row gutter={[10, 10]}>
                     <Col xs={24} sm={12}>
                       <div className="flex space-x-8">
-                        <div className="relative w-[33%] pb-3.5">
+                        <div className="relative w-[50%] pb-3.5">
                           <label
                             htmlFor="rTYpe"
                             className="block mb-2 text-sm font-bold text-gray-900 "
@@ -285,7 +288,7 @@ const EditReservation = () => {
                             </option>
                           </select>
                         </div>
-                        <div className="relative w-[33%] pb-3.5">
+                        <div className="relative w-[50%] pb-3.5">
                           <label
                             htmlFor="tType"
                             className="block mb-2 text-sm font-bold text-gray-900 "
@@ -311,7 +314,11 @@ const EditReservation = () => {
                             </option>
                           </select>
                         </div>
-                        <div className="relative w-[33%] pb-3.5">
+                      </div>
+                    </Col>
+                    <Col xs={24} sm={12}>
+                      <div className="flex space-x-8">
+                        <div className="relative w-[50%] pb-3.5">
                           <label
                             htmlFor="days"
                             className="block mb-2 text-sm font-bold text-gray-900 "
@@ -321,14 +328,10 @@ const EditReservation = () => {
                           <input
                             type="number"
                             id="days"
-                            className="block p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs"
+                            className="block p-2 w-full text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs"
                           />
                         </div>
-                      </div>
-                    </Col>
-                    <Col xs={24} sm={12}>
-                      <div className="flex space-x-8">
-                        <div className="relative w-[33%] pb-3.5">
+                        <div className="relative w-[50%] pb-3.5">
                           <label
                             htmlFor="checkinBranch"
                             className="block mb-2 text-sm font-bold text-gray-900 "
@@ -339,10 +342,16 @@ const EditReservation = () => {
                           <input
                             type="text"
                             id="checkinBranch"
-                            className="block p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs"
+                            className="block p-2 w-full text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs"
                           />
                         </div>
-                        <div className="relative w-[33%] pb-3.5">
+                      </div>
+                    </Col>
+                  </Row>
+                  <Row gutter={[10, 10]}>
+                    <Col xs={24} sm={12}>
+                      <div className="flex space-x-8">
+                        <div className="relative w-[50%] pb-3.5">
                           <label
                             htmlFor="checkinDate"
                             className="block mb-2 text-sm font-bold text-gray-900 "
@@ -351,12 +360,12 @@ const EditReservation = () => {
                           </label>
 
                           <input
-                            type="text"
+                            type="date"
                             id="checkinDate"
-                            className="block p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs"
+                            className="block p-2 w-full text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs"
                           />
                         </div>
-                        <div className="relative w-[33%] pb-3.5">
+                        <div className="relative w-[50%] pb-3.5">
                           <label
                             htmlFor="checkoutDate"
                             className="block mb-2 text-sm font-bold text-gray-900 "
@@ -365,11 +374,46 @@ const EditReservation = () => {
                           </label>
 
                           <input
-                            type="text"
+                            type="date"
                             id="checkoutDate"
-                            className="block p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs"
+                            className="block p-2 w-full text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs"
                           />
                         </div>
+                      </div>
+                    </Col>
+                    <Col xs={24} sm={12}>
+                      <div className="flex space-x-8">
+                        <div className="relative w-[50%] pb-3.5">
+                          <label
+                            htmlFor="rTYpe"
+                            className="block mb-2 text-sm font-bold text-gray-900 "
+                          >
+                            Available Drivers
+                          </label>
+
+                          <select className="w-full h-fit px-3 py-2 leading-tight placeholder-white text-gray-900 border border-gray-300 rounded-lg bg-gray-50">
+                            <option value="" className="text-app-black">
+                              Select a Driver
+                            </option>
+
+                            {drivers?.map((driver: any, i: any) => {
+                              return (
+                                <Fragment key={i}>
+                                  <option
+                                    key={driver.id}
+                                    value={driver.id}
+                                    className="text-app-black"
+                                  >
+                                    {driver?.status === "Available"
+                                      ? driver?.full_name
+                                      : null}
+                                  </option>
+                                </Fragment>
+                              );
+                            })}
+                          </select>
+                        </div>
+                        <div className="relative w-[50%] pb-3.5"></div>
                       </div>
                     </Col>
                   </Row>
@@ -384,7 +428,7 @@ const EditReservation = () => {
                         Please enter info
                       </p>
                     </div>
-                    <p className="text-light-green text-md">Step 4 of 5</p>
+                    <p className="text-light-green text-md">Step 4 of 4</p>
                   </div>
 
                   <Row gutter={[10, 10]}>
@@ -465,99 +509,6 @@ const EditReservation = () => {
                             className="block p-2 w-full text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs"
                           />
                         </div>
-                      </div>
-                    </Col>
-                  </Row>
-                </div>
-                <div className="bg-app-white my-2 py-3 px-6 rounded-lg shadow-2xl">
-                  <div className="flex justify-between items-center">
-                    <div className="space-y-2">
-                      <p className="text-app-dark text-xl font-extrabold pb-6">
-                        Driver's Information
-                      </p>
-                    </div>
-                    <p className="text-light-green text-md">Step 5 of 5</p>
-                  </div>
-
-                  <Row gutter={[10, 10]}>
-                    <Col xs={24} sm={12}>
-                      <div className="flex space-x-8">
-                        <div className="relative w-[50%] pb-3.5">
-                          <label
-                            htmlFor="dName"
-                            className="block mb-2 text-sm font-bold text-gray-900 "
-                          >
-                            Driver's Name
-                          </label>
-
-                          <input
-                            type="text"
-                            id="dName"
-                            className="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs"
-                          />
-                        </div>
-                        <div className="relative w-[50%] pb-3.5">
-                          <label
-                            htmlFor="dLicenseNo"
-                            className="block mb-2 text-sm font-bold text-gray-900 "
-                          >
-                            License No.
-                          </label>
-
-                          <input
-                            type="text"
-                            id="dLicenseNo"
-                            className="block p-2 w-full text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs"
-                          />
-                        </div>
-                      </div>
-                    </Col>
-                    <Col xs={24} sm={12}>
-                      <div className="flex space-x-8">
-                        <div className="relative w-[50%] pb-3.5">
-                          <label
-                            htmlFor="dPhoneNumber"
-                            className="block mb-2 text-sm font-bold text-gray-900 "
-                          >
-                            Phone Number
-                          </label>
-
-                          <input
-                            type="text"
-                            id="dPhoneNumber"
-                            className="block p-2 w-full text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs"
-                          />
-                        </div>
-                        <div className="relative w-[50%] pb-3.5">
-                          <label
-                            htmlFor="dDob"
-                            className="block mb-2 text-sm font-bold text-gray-900 "
-                          >
-                            Date of Birth
-                          </label>
-                          <input
-                            type="date"
-                            id="dDob"
-                            className="block p-2 w-full text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs"
-                          />
-                        </div>
-                      </div>
-                    </Col>
-                    <Col xs={24} sm={12}>
-                      <div className="relative pb-3.5 ">
-                        <label
-                          htmlFor="cImage"
-                          className="block mb-2 text-sm font-bold text-gray-900 "
-                        >
-                          Upload Driver Image
-                        </label>
-
-                        <input
-                          id="cImage"
-                          type="file"
-                          multiple
-                          className="block text-sm text-app-dark file:mr-4 file:py-2 file:px-4 file:rounded-md file:border-0 file:text-sm file:font-semibold file:bg-light-green file:text-btn-green hover:file:bg-light-green"
-                        />
                       </div>
                     </Col>
                   </Row>
