@@ -10,6 +10,7 @@ import {
 } from "@headlessui/react";
 import { Button } from "../atoms/Button";
 import { Close } from "../icons/Close";
+import classNames from "classnames";
 
 const UpdatePassword = ({ onClose = () => {}, show2, onClick }) => {
   return (
@@ -60,15 +61,18 @@ const UpdatePassword = ({ onClose = () => {}, show2, onClick }) => {
                   <form>
                     <div className="my-5 py-4 px-8">
                       <input
-                        type="text"
+                        type="password"
                         className="w-full px-3 py-2 leading-tight text-white placeholder-white rounded shadow-lg bg-app-grey focus:outline-none focus:shadow-outline"
                         placeholder="Old Password"
                       />
+                      <error className="text-red-600 italic">
+                        old password is incorrect
+                      </error>
                     </div>
 
                     <div className=" px-8">
                       <input
-                        type="text"
+                        type="password"
                         className="w-full px-3 py-2 leading-tight text-white placeholder-white rounded shadow-lg bg-app-grey focus:outline-none focus:shadow-outline"
                         placeholder="New Password"
                       />

@@ -146,6 +146,7 @@ const AddCustomer = () => {
                                 <input
                                   type="date"
                                   id="dob"
+                                  max="2006-01-01"
                                   className="block p-2 w-full text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs"
                                 />
                               </div>
