@@ -9,10 +9,10 @@ import RSummary from "@/modules/RSummary";
 import Print from "@/components/icons/Print";
 import Message from "@/components/icons/Message";
 import Notes from "@/modules/Notes";
-import RDocumentTable from "@/modules/RDocumentTable";
 import EmailLog from "@/modules/EmailLog";
 import PaymentTable from "@/modules/PaymentTable";
 import ReservationStatusModal from "@/components/molecules/ReservationStatusModal";
+import RDocumentTable from "@/modules/RDocumentTable";
 
 const ReservationDetailsPage = () => {
   const [selectedOne, setSelectedOne] = useState("summary");
