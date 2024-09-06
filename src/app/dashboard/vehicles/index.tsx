@@ -49,7 +49,7 @@ const Vehicle = () => {
     } else {
       return filteredData;
     }
-  }, []);
+  });
 
   return (
     <Fragment>

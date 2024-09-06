@@ -52,7 +52,7 @@ const EditDriver = () => {
                   <div className="flex justify-between items-center">
                     <div className="space-y-2">
                       <p className="text-app-dark text-xl font-extrabold pb-6">
-                        Driver's Information
+                        Driver&apos;s Information
                       </p>
                     </div>
                     <p className="text-light-green text-md">Step 1 of 1</p>
@@ -66,7 +66,7 @@ const EditDriver = () => {
                             htmlFor="dName"
                             className="block mb-2 text-sm font-bold text-gray-900 "
                           >
-                            Driver's Name
+                            Driver&apos;s Name
                           </label>
 
                           <input

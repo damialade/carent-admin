@@ -22,7 +22,7 @@ const Reservations = () => {
     } else {
       return reservationData;
     }
-  }, []);
+  });
 
   return (
     <Fragment>
