@@ -1,126 +1,31 @@
 //@ts-nocheck
 "use client";
-import React, { Fragment, useState, useRef, useEffect } from "react";
+import React, { Fragment, useEffect, useState } from "react";
 import { DayPilot, DayPilotScheduler } from "daypilot-pro-react";
 import WithSideBar from "@/components/Layout/WithSideBar";
-import Zoom from "./zoom";
 
 const Scheduler = () => {
-  const [config, setConfig] = useState({
-    startDate: "2024-05-01",
-    days: 31,
+  const [scheduler, setScheduler] = useState<DayPilot.Scheduler>();
+
+  const initialConfig: DayPilot.SchedulerConfig = {
+    startDate: "2024-01-01",
+    days: 366,
     scale: "Day",
     timeHeaders: [{ groupBy: "Month" }, { groupBy: "Day", format: "d" }],
-    cellWidthSpec: "Auto",
-    cellWidth: 50,
-    durationBarVisible: false,
-    treeEnabled: true,
     rowHeaderColumns: [
-      { name: "Car" },
-      { name: "Seats", display: "seats", width: 50 },
-      { name: "Doors", display: "doors", width: 50 },
-      { name: "Transmission", display: "transmission", width: 90 },
+      { text: "Storage Box", width: 100 },
+      { text: "Capacity", display: "capacity" },
+      { text: "Status", width: 50 },
     ],
-    onEventMoved: (args) => {
-      console.log(
-        "Event moved: ",
-        args.e.data.id,
-        args.newStart,
-        args.newEnd,
-        args.newResource
-      );
-      getScheduler().message("Event moved: " + args.e.data.text);
-    },
-    onEventResized: (args) => {
-      console.log(
-        "Event resized: ",
-        args.e.data.id,
-        args.newStart,
-        args.newEnd
-      );
-      getScheduler().message("Event resized: " + args.e.data.text);
-    },
-    onTimeRangeSelected: (args) => {
-      DayPilot.Modal.prompt("New event name", "Event").then((modal) => {
-        getScheduler().clearSelection();
-        if (!modal.result) {
-          return;
-        }
-        getScheduler().events.add({
-          id: DayPilot.guid(),
-          text: modal.result,
-          start: args.start,
-          end: args.end,
-          resource: args.resource,
-        });
-      });
-    },
-    onBeforeEventRender: (args) => {
-      if (!args.data.backColor) {
-        args.data.backColor = "#93c47d";
-      }
-      args.data.borderColor = "darker";
-      args.data.fontColor = "white";
+  };
 
-      args.data.areas = [];
-      // if (args.data.locked) {
-      //   args.data.areas.push({
-      //     right: 4,
-      //     top: 8,
-      //     height: 18,
-      //     width: 18,
-      //     //   symbol: "icons/daypilot.svg#padlock",
-      //     fontColor: "white",
-      //   });
-      // } else if (args.data.plus) {
-      //   args.data.areas.push({
-      //     right: 4,
-      //     top: 8,
-      //     height: 18,
-      //     width: 18,
-      //     //   symbol: "icons/daypilot.svg#plus-4",
-      //     fontColor: "white",
-      //   });
-      // }
-    },
-  });
+  const [config, setConfig] = useState(initialConfig);
 
-  const schedulerRef = useRef();
-
-  const getScheduler = () => schedulerRef.current.control;
-
-  const zoomChange = (args) => {
-    switch (args.level) {
-      case "month":
-        setConfig({
-          ...config,
-          startDate: DayPilot.Date.today().firstDayOfMonth(),
-          days: DayPilot.Date.today().daysInMonth(),
-          scale: "Day",
-        });
-        break;
-      case "week":
-        setConfig({
-          ...config,
-          startDate: DayPilot.Date.today().firstDayOfWeek(),
-          days: 7,
-          scale: "Day",
-        });
-        break;
-      default:
-        throw new Error("Invalid zoom level");
+  useEffect(() => {
+    if (!scheduler || scheduler?.disposed()) {
+      return;
     }
-  };
 
-  const cellWidthChange = (ev) => {
-    const checked = ev.target.checked;
-    setConfig((prevConfig) => ({
-      ...prevConfig,
-      cellWidthSpec: checked ? "Auto" : "Fixed",
-    }));
-  };
-
-  const loadData = (args) => {
     const resources = [
       {
         name: "Convertible",
@@ -279,15 +184,61 @@ const Scheduler = () => {
       },
     ];
 
-    getScheduler().update({
-      resources,
-      events,
+    scheduler.update({ resources, events });
+  }, [scheduler]);
+
+  const onTimeRangeSelected = async (
+    args: DayPilot.SchedulerTimeRangeSelectedArgs
+  ) => {
+    const modal = await DayPilot.Modal.prompt("Create a new event:", "Event 1");
+    scheduler?.clearSelection();
+    if (modal.canceled) {
+      return;
+    }
+    scheduler?.events.add({
+      start: args.start,
+      end: args.end,
+      id: DayPilot.guid(),
+      text: modal.result,
+      resource: args.resource,
     });
   };
 
-  useEffect(() => {
-    loadData();
-  }, []);
+  const onBeforeEventRender = (
+    args: DayPilot.SchedulerBeforeEventRenderArgs
+  ) => {
+    args.data.areas = [
+      {
+        right: 10,
+        top: "calc(50% - 7px)",
+        width: 18,
+        height: 18,
+        symbol: "/daypilot.svg#checkmark-2",
+        backColor: "#999999",
+        fontColor: "#ffffff",
+        padding: 2,
+        style: "border-radius: 50%",
+      },
+    ];
+  };
+
+  const onBeforeRowHeaderRender = (
+    args: DayPilot.SchedulerBeforeRowHeaderRenderArgs
+  ) => {
+    args.row.columns[1].horizontalAlignment = "center";
+    if (args.row.data.status === "locked") {
+      args.row.columns[2].areas = [
+        {
+          left: "calc(50% - 8px)",
+          top: 10,
+          width: 20,
+          height: 20,
+          symbol: "/daypilot.svg#padlock",
+          fontColor: "#777777",
+        },
+      ];
+    }
+  };
 
   return (
     <Fragment>
@@ -295,27 +246,11 @@ const Scheduler = () => {
         <div className="px-3">
           <p className="text-app-white text-3xl font-extrabold">Scheduler</p>
         </div>
-        <div className="max-w-[98%] mx-auto my-6">
-          <div className="toolbar py-2 ">
-            <Zoom onChange={(args) => zoomChange(args)} />
-
-            <span className="toolbar-item font-medium text-md text-btn-green">
-              <label>
-                <input
-                  type="checkbox"
-                  className="accent-btn-green"
-                  checked={config.cellWidthSpec === "Auto"}
-                  onChange={(ev) => cellWidthChange(ev)}
-                />{" "}
-                Adjust width
-              </label>
-            </span>
-          </div>
-          <DayPilotScheduler {...config} ref={schedulerRef} />
+        <div>
+          <DayPilotScheduler {...config} controlRef={setScheduler} />
         </div>
       </WithSideBar>
     </Fragment>
   );
 };
-
 export default Scheduler;
