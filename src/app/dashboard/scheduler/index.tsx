@@ -287,7 +287,7 @@ const Scheduler = () => {
 
   useEffect(() => {
     loadData();
-  }, []);
+  }, [loadData]);
 
   return (
     <Fragment>

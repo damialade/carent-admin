@@ -55,10 +55,10 @@ const AddReservation = () => {
                     <div className="flex justify-between items-center">
                       <div className="space-y-2">
                         <p className="text-app-dark text-xl font-extrabold">
-                          Customer's Information
+                          Customer&apos;s Information
                         </p>
                         <p className="text-light-green text-sm">
-                          Please enter renter's info
+                          Please enter renter&apos;s info
                         </p>
                       </div>
                       <p className="text-light-green text-md">Step 1 of 4</p>
@@ -71,7 +71,7 @@ const AddReservation = () => {
                             htmlFor="name"
                             className="block mb-2 text-sm font-bold text-gray-900 "
                           >
-                            Customer's Name
+                            Customer&apos;s Name
                           </label>
 
                           <input

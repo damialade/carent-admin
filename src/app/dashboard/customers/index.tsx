@@ -40,7 +40,7 @@ const Customers = () => {
     } else {
       return filteredData;
     }
-  });
+  }, []);
 
   return (
     <Fragment>
