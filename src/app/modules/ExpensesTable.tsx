@@ -26,36 +26,33 @@ const ExpensesTable = () => {
     }
   });
 
-  const columns = useMemo(
-    () => [
-      columnHelper.accessor("expenseType", {
-        header: () => "Expense Type",
-        cell: (info) => info.getValue(),
-      }),
-      columnHelper.accessor("expenseAmount", {
-        header: () => "Expense Amount",
-        cell: (info) => <p> ₦{info.getValue()}</p>,
-      }),
+  const columns = useMemo(() => [
+    columnHelper.accessor("expenseType", {
+      header: () => "Expense Type",
+      cell: (info) => info.getValue(),
+    }),
+    columnHelper.accessor("expenseAmount", {
+      header: () => "Expense Amount",
+      cell: (info) => <p> ₦{info.getValue()}</p>,
+    }),
 
-      columnHelper.accessor("payee", {
-        header: () => "Payee",
-        cell: (info) => <p> {info.getValue()}</p>,
-      }),
-      columnHelper.accessor("expenseDate", {
-        header: () => "Expense Date",
-        cell: (info) => <p> {info.getValue()}</p>,
-      }),
-      columnHelper.accessor("mileage", {
-        header: () => "Mileage",
-        cell: (info) => <p> {info.getValue()}</p>,
-      }),
-      columnHelper.accessor("note", {
-        header: () => "Note",
-        cell: (info) => <p> {info.getValue()}</p>,
-      }),
-    ],
-    []
-  );
+    columnHelper.accessor("payee", {
+      header: () => "Payee",
+      cell: (info) => <p> {info.getValue()}</p>,
+    }),
+    columnHelper.accessor("expenseDate", {
+      header: () => "Expense Date",
+      cell: (info) => <p> {info.getValue()}</p>,
+    }),
+    columnHelper.accessor("mileage", {
+      header: () => "Mileage",
+      cell: (info) => <p> {info.getValue()}</p>,
+    }),
+    columnHelper.accessor("note", {
+      header: () => "Note",
+      cell: (info) => <p> {info.getValue()}</p>,
+    }),
+  ]);
 
   return (
     <>

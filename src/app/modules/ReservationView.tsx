@@ -18,7 +18,7 @@ const ReservationView = () => {
     } else {
       return reservationData;
     }
-  });
+  }, []);
 
   return (
     <Fragment>
