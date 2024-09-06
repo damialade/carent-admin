@@ -12,7 +12,7 @@ import Notes from "@/modules/Notes";
 import EmailLog from "@/modules/EmailLog";
 import PaymentTable from "@/modules/PaymentTable";
 import ReservationStatusModal from "@/components/molecules/ReservationStatusModal";
-import RDocumentTable from "@/modules/RDocumentTable";
+import RDTable from "@/modules/RDTable";
 
 const ReservationDetailsPage = () => {
   const [selectedOne, setSelectedOne] = useState("summary");
@@ -184,7 +184,7 @@ const ReservationDetailsPage = () => {
           {summary && <RSummary />}
           {payment && <PaymentTable />}
           {note && <Notes />}
-          {document && <RDocumentTable />}
+          {document && <RDTable />}
           {emailLog && <EmailLog />}
         </div>
       </WithSideBar>
