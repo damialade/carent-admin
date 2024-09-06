@@ -45,7 +45,7 @@ const Driver = () => {
     } else {
       return filteredData;
     }
-  }, []);
+  });
 
   return (
     <Fragment>
