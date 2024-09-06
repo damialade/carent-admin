@@ -7,7 +7,7 @@ import DocumentModal from "@/components/molecules/DocumentModal";
 
 const columnHelper = createColumnHelper<VehicleDetails>();
 
-const RDocumentTable = () => {
+const RDTable = () => {
   let data = require("../dashboard/vehicles/vehicleDetails.json");
 
   const columns = useMemo(
@@ -55,4 +55,4 @@ const RDocumentTable = () => {
   );
 };
 
-export default RDocumentTable;
+export default RDTable;
