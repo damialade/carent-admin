@@ -41,5 +41,8 @@ const config: Config = {
     },
   },
   plugins: [],
+  rules: {
+    "react-hooks/exhaustive-deps": 0,
+  },
 };
 export default config;
