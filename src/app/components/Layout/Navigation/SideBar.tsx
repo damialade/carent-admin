@@ -42,12 +42,12 @@ const paths: {
     text: "Vehicles",
     icon: Vehicle,
   },
-  {
-    id: 3,
-    path: "/scheduler",
-    text: "Scheduler",
-    icon: Planner,
-  },
+  // {
+  //   id: 3,
+  //   path: "/scheduler",
+  //   text: "Scheduler",
+  //   icon: Planner,
+  // },
   {
     id: 4,
     path: "/reservations",
