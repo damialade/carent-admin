@@ -33,7 +33,7 @@ const PaginatedTable = ({
   useEffect(() => {
     table?.setPageSize(perPage);
     table?.setPageIndex(0);
-  });
+  }, [perPage]);
 
   return (
     <div>
