@@ -12,12 +12,13 @@ import Reservations from "@/components/icons/Reservations";
 import Customers from "@/components/icons/Customers";
 import Agreements from "@/components/icons/Agreements";
 import Reports from "@/components/icons/Reports";
+import classNames from "classnames";
 
 const NavLink = (props: any) => {
-  const { to, children } = props;
+  const { to, children, className } = props;
   return (
     <Link legacyBehavior href={to}>
-      <span {...props}>{children}</span>
+      <span className={className}>{children}</span>
     </Link>
   );
 };
@@ -41,12 +42,12 @@ const paths: {
     text: "Vehicles",
     icon: Vehicle,
   },
-  // {
-  //   id: 3,
-  //   path: "/scheduler",
-  //   text: "Scheduler",
-  //   icon: Planner,
-  // },
+  {
+    id: 3,
+    path: "/scheduler",
+    text: "Scheduler",
+    icon: Planner,
+  },
   {
     id: 4,
     path: "/reservations",
@@ -85,7 +86,7 @@ const getActive = (path: any, index: number, loc: any, isButton: any) => {
     );
   }
 
-  const url = path.path ? `/${path.path}` : "";
+  const url = path.path ? `${path.path}` : "";
 
   return loc?.usePathname.endsWith(`/dashboard${url}`);
 };
@@ -172,7 +173,7 @@ const NavItem = ({
     );
   }
 
-  const url = path.path ? `/${path.path}` : "";
+  const url = path.path ? `${path.path}` : "";
 
   return (
     <NavLink
